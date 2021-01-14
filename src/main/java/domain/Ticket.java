@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
 public class Ticket {
     private int id;
     private int price;
-    private String fromAirport;
-    private String inAirport;
+    private String from;
+    private String to;
     private int timeWay;
+
 }
