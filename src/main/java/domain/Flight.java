@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 
-public class Ticket {
+public class Flight {
     private int id;
     private int price;
     private String from;
