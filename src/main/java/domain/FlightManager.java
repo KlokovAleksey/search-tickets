@@ -2,6 +2,9 @@ package domain;
 
 import repository.FlightRepository;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class FlightManager {
 
     private FlightRepository repository;
@@ -14,7 +17,7 @@ public class FlightManager {
         repository.save(flight);
     }
 
-    public Flight[] findAll(String from, String to) {
+    public Flight[] findAll(String from, String to, Comparator<Flight> comparator) {
         Flight[] flights = repository.findAll();
         Flight[] result = new Flight[0];
         for (Flight flight : flights) {
@@ -25,6 +28,8 @@ public class FlightManager {
                 result = tmp;
             }
         }
+        Arrays.sort(result, comparator);
         return result;
     }
+
 }

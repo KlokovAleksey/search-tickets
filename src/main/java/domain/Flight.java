@@ -19,4 +19,5 @@ public class Flight implements Comparable<Flight> {
     public int compareTo(Flight o) {
         return price - o.price;
     }
+
 }
