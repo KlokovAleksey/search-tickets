@@ -2,6 +2,8 @@ package domain;
 
 import repository.FlightRepository;
 
+import java.util.Arrays;
+
 public class FlightManager {
 
     private FlightRepository repository;
@@ -25,6 +27,7 @@ public class FlightManager {
                 result = tmp;
             }
         }
+        Arrays.sort(result);
         return result;
     }
 }

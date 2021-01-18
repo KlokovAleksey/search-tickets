@@ -32,7 +32,6 @@ class FlightManagerTest {
     public void shouldFindAdd() {
         Flight[] actual = manager.findAll("LED", "GOJ");
         Flight[] expected = new Flight[]{flight1, flight6, flight3};
-        Arrays.sort(actual);
         assertArrayEquals(actual, expected);
     }
 
@@ -40,7 +39,6 @@ class FlightManagerTest {
     public void shouldOneSortFlight() {
         Flight[] actual = manager.findAll("FRU", "KUF");
         Flight[] expected = new Flight[]{flight2};
-        Arrays.sort(actual);
         assertArrayEquals(actual, expected);
     }
 
