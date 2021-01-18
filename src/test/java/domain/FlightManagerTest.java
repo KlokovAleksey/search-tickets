@@ -15,6 +15,9 @@ class FlightManagerTest {
     private Flight flight4 = new Flight(4, 300, "OGZ", "FRU", 180);
     private Flight flight5 = new Flight(5, 500, "KUF", "LED", 200);
     private Flight flight6 = new Flight(6, 400, "LED", "GOJ", 130);
+    private Flight flight7 = new Flight(7, 250, "LED", "GOJ", 140);
+    private Flight flight8 = new Flight(8, 650, "LED", "GOJ", 270);
+    private Flight flight9 = new Flight(9, 450, "LED", "GOJ", 210);
 
     @BeforeEach
     public void addManager() {
@@ -24,12 +27,15 @@ class FlightManagerTest {
         manager.add(flight4);
         manager.add(flight5);
         manager.add(flight6);
+        manager.add(flight7);
+        manager.add(flight8);
+        manager.add(flight9);
     }
 
     @Test
     public void shouldFindAdd() {
         Flight[] actual = manager.findAll("LED", "GOJ", new TicketByPriceAscComparator());
-        Flight[] expected = new Flight[]{flight1, flight6, flight3};
+        Flight[] expected = new Flight[]{flight1, flight6, flight7,flight3,flight9,flight8};
         assertArrayEquals(actual, expected);
     }
 
